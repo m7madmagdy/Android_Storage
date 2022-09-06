@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dataClass"
+            type="com.example.android_storage.data.Data" />
+
+        <variable
+            name="activity"
+            type="com.example.android_storage.ui.activity.StorageActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.StorageActivity">
+
+        <TextView
+            android:id="@+id/storage_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@{dataClass.headerText}"
+            android:textColor="@color/green"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/storage_image"
+            storageImage="@{dataClass.storageImage}"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storage_name"
+            app:tint="#364A5A"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edtTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#F3F3F3"
+            android:elevation="2dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="14dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storage_image"
+            tools:ignore="LabelFor">
+
+            <requestFocus />
+        </EditText>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="#2477BF"
+            android:onClick="@{() -> activity.saveBtn()}"
+            android:padding="16dp"
+            android:text="@{dataClass.saveButton}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTxt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/getBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/green"
+            android:onClick="@{() -> activity.getBtn()}"
+            android:padding="16dp"
+            android:text="@{dataClass.getButton}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTxt" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/anotherStorage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#E84512"
+            android:onClick="@{() -> activity.anotherStorageBtn()}"
+            android:padding="16dp"
+            android:text="@{dataClass.anotherStorage}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/getBtn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/recyclerViewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="#E84512"
+            android:onClick="@{() -> activity.recyclerActivity()}"
+            android:padding="16dp"
+            android:text="@{dataClass.recyclerViewBtn}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/getBtn" />
+
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/anotherStorage">
+
+            <ImageView
+                android:id="@+id/image_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E1E1E1"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> activity.addImage()}"
+                android:padding="30dp"
+                android:src="@drawable/ic_add_a_photo"
+                tools:ignore="ContentDescription,UnusedAttribute"
+                tools:targetApi="m" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

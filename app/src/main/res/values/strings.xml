@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Android Storage</string>
+    <string name="save_to_file">Save To File</string>
+    <string name="get_from_file">Get Text From File</string>
+    <string name="saved_successfully">Saved Successfully</string>
+    <string name="read_and_write_external_storage">Read and Write External Storage</string>
+    <string name="another_storage">Another Storage</string>
+    <string name="title_activity_another_storage">AnotherStorageActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="camera">Camera</string>
+    <string name="storage_title">Storage Permission</string>
+    <string name="camera_permission">Camera Permission</string>
+    <string name="recycler_view_activity">Recycler View</string>
+    <string name="title_select_image">Select an Action</string>
+
+</resources>

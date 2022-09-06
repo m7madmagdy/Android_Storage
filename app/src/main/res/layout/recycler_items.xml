@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="person"
+            type="com.example.android_storage.data.Person" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/idTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/recycler_padding"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_size"
+                android:text="@{person.id}"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="id" />
+
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:padding="@dimen/recycler_padding"
+                android:textColor="#FF5722"
+                android:text="@{person.name}"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toStartOf="@+id/ageTv"
+                app:layout_constraintStart_toEndOf="@+id/idTv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="name" />
+
+            <TextView
+                android:id="@+id/ageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:padding="@dimen/recycler_padding"
+                android:textColor="#2196F3"
+                android:text="@{person.age}"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="age" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
